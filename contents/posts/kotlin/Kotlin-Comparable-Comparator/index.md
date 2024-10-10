@@ -38,7 +38,6 @@ fun main() {
 
 위 결과처럼 객체간의 >, < 비교를 지원합니다.
 
-<br>
 
 ## Comparator
 ---
@@ -56,7 +55,6 @@ listOf<HeadPhone>(headPhone1,headPhone2,headPhone3)
 
 Comparator를 람다로 넘겨 규칙을 설정할 수 있습니다.
 
-<br>
 
 ## Sort
 ---
@@ -73,7 +71,6 @@ Collection 자체의 원소 순서를 변경합니다.
 
 내림차순은 `sortDescending`을 이용합니다.
 
-<br>
 
 ## Sorted
 ---
@@ -89,7 +86,6 @@ println(list)    // [1, 2, 7, 6, 5, 6]
 
 내림차순은 `sortedByDescending`를 이용합니다.
 
-<br>
 
 ## SortBy
 ---
@@ -104,7 +100,6 @@ println(list)  // [(1, a), (2, b), (7, c), (5, c), (6, d), (6, e)]
 
 역시 내림차순은 `sortByDescending`을 이용합니다.
 
-<br>
 
 ## SortWith
 ---

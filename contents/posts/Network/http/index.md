@@ -17,7 +17,6 @@ HTTP 메시지는 크게 시작줄(start line), 헤더(header), 본문(body)로 
 면접에서 쿠키가 HTTP 헤더 어디에 담겨있냐고 물어봤다는 후기를 듣고 정리하게 되었습니다.
 
 
-<br>
 
 ## 일반 헤더(General Header)
 
@@ -51,7 +50,6 @@ HTTP 메시지가 생성된 날짜와 시간을 나타냅니다. 서버와 클�
   Date: Wed, 08 Oct 2024 12:34:56 GMT
   ```
 
-<br>
 
 ## 요청 헤더(Request Header)
 
@@ -90,7 +88,6 @@ HTTP 메시지가 생성된 날짜와 시간을 나타냅니다. 서버와 클�
   Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
   ```
 
-<br>
 
 ## 응답 헤더(Response Header)
 
@@ -128,7 +125,6 @@ HTTP 메시지가 생성된 날짜와 시간을 나타냅니다. 서버와 클�
   Set-Cookie: sessionId=abc123; HttpOnly; Secure; SameSite=Strict
   ```
 
-<br>
 
 ## 엔터티 헤더(Entity Header) -> Representation header
 
@@ -165,7 +161,6 @@ HTTP 메시지가 생성된 날짜와 시간을 나타냅니다. 서버와 클�
   ETag: "33a64df551425fcc55e4d42a148795d9f25f89d4"
   ```
 
-<br>
 
 
 ## 커스텀 헤더(Custom Headers)
