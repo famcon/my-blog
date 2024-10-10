@@ -48,7 +48,7 @@ export const light = {
 }
 
 export const dark = {
-  name: "dark",
+  name: "light",
   colors: {
     bodyBackground: GRAY9,
     text: GRAY0,

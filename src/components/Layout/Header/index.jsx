@@ -144,12 +144,6 @@ const Header = ({ toggleTheme }) => {
           <Link to="/">{title}</Link>
         </BlogTitle>
         <Menu>
-          <ToggleWrapper>
-            <IconRail theme={theme.name}>
-              <FaSun onClick={toggleTheme} />
-              <FaMoon onClick={toggleTheme} />
-            </IconRail>
-          </ToggleWrapper>
           <Link to="/tags">
             <FaTags />
           </Link>

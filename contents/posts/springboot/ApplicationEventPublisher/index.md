@@ -5,7 +5,8 @@ tags:
   - "SpringBoot" 
 ---
 
-# 이벤트 기반 프로그래밍 
+## 이벤트 기반 프로그래밍
+---
 
 `ApplicationEventPublisher`는 이벤트를 발행(publish)하는 데 사용되는 인터페이스입니다. 
 
@@ -67,7 +68,8 @@ class UserEventListener {
 
 <br>
 
-# 이벤트 발행과 리스닝 구현하기
+## 이벤트 발행과 리스닝 구현하기
+---
 
 ### 이벤트 클래스 정의
 

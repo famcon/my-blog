@@ -3,11 +3,12 @@ title: Systemd with Nodejs
 date: "2023-07-25T12:00:00.000Z"
 tags:
   - "Linux"
+  - "Node.js"
+  - "Systemd"
 ---
 
 
 Node.js를 이용하여 서버를 구축할 때 많이들 pm2로 실행을 하는데요.
-
 beanstalk으로 nodejs 플랫폼을 구축하면 pm2를 사용하지 않습니다. 
 대신 직접 systemd라는 것을 사용합니다.
 
@@ -15,11 +16,15 @@ beanstalk으로 nodejs 플랫폼을 구축하면 pm2를 사용하지 않습니�
 
 어떻게 구축했는지 공유해보려합니다.
 
-# 준비 (Ec2 세팅)
+
+
+## 준비 (Ec2 세팅)
+
+---
 
 EC2 인스턴스를 띄우면 저는 다음의 기본적인 설정을 해둡니다.
 
-### History <a href="#headerid_1" id="headerid_1"></a>
+### History <a href="qwerheaderid_1" id="headerid_1"></a>
 
 히스토리 명령어는 리눅스 설정이 어떻게 변했는 지 추적할 때 씁니다.
 
@@ -31,16 +36,16 @@ vi /etc/profile
 source /etc/profile
 ```
 
-### 시간 설정 <a href="#headerid_2" id="headerid_2"></a>
+### 시간 설정 <a href="qwerheaderid_2" id="headerid_2"></a>
 
 ```bash
 sudo ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 date
 ```
 
-위 명령어를 입력해보면 현재 시간이 한국 시간으로 변경된 것을 확인할 수 있습니다.&#x20;
+위 명령어를 입력해보면 현재 시간이 한국 시간으로 변경된 것을 확인할 수 있습니다
 
-하지만 여기까지만 하면 시간에 대하여 신뢰를 할 수가 없습니다.&#x20;
+하지만 여기까지만 하면 시간에 대하여 신뢰를 할 수가 없습니다
 
 하드웨어 시간은 실제 시간보다 조금씩 밀리기 때문입니다.
 
@@ -60,7 +65,7 @@ sudo systemctrl enable chrony
 sudo systemctrl start chrony
 ```
 
-### 기본 패키지 설치 <a href="#headerid_3" id="headerid_3"></a>
+### 기본 패키지 설치 <a href="qwerheaderid_3" id="headerid_3"></a>
 
 ```bash
 sudo apt update
@@ -79,19 +84,21 @@ nohup node index.js &
 curl http://localhost:8080
 ```
 
-nohup은 프로세스를 실행한 터미널의 세션 연결이 끊기더라도 프로세스를 계속해서 동작시키는 명령어입니다.&#x20;
+nohup은 프로세스를 실행한 터미널의 세션 연결이 끊기더라도 프로세스를 계속해서 동작시키는 명령어입니다
 
-로그아웃 등과 같이 세션 연결이 끊기더라도 프로세스가 계속 동작될 수 있도록 합니다. 하지만 Ctrl+C를 누르면 프로세스는 바로 종료되는데요.&#x20;
+로그아웃 등과 같이 세션 연결이 끊기더라도 프로세스가 계속 동작될 수 있도록 합니다. 하지만 Ctrl+C를 누르면 프로세스는 바로 종료되는데요
 
-반면 백그라운드(&) 실행은 실행 시키면 대기 상태가 없지만, 세션 연결이 끊기면 실행한 프로그램도 함께 종료됩니다.&#x20;
+반면 백그라운드(&) 실행은 실행 시키면 대기 상태가 없지만, 세션 연결이 끊기면 실행한 프로그램도 함께 종료됩니다
 
-해서, 두개를 함께 사용합니다.&#x20;
+해서, 두개를 함께 사용합니다
 
 하지만 이 역시 재부팅시 실행했던 프로세스가 자동으로 재실행되지는 않기에 저희는 systemd가 필요합니다.
 
-<br>
 
-# Systemd <a href="#headerid_4" id="headerid_4"></a>
+
+## Systemd <a href="qwerheaderid_4" id="headerid_4"></a>
+
+---
 
 systemd(system daemon)은 전통적으로 Unix 시스템이 부팅후에 가장 먼저 생성된 후에 다른 프로세스를 실행하는 init 역할을 대체하는 데몬입니다.
 
@@ -114,7 +121,7 @@ systemd의 아키텍처는 매우 복잡하지만 일반 리눅스 사용자 입
 
 ### 서비스 파일 작성
 
-(서비스이름).service 파일을 만들어줍니다. &#x20;
+(서비스이름).service 파일을 만들어줍니다.
 
 ```bash
 ### index.service

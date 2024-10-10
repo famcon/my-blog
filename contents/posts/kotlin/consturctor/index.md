@@ -11,9 +11,9 @@ TypeScript에서 Class의 constructor는 무조건 public이었습니다.
 
 코틀린은 생성자에도 접근 제한을 줌으로써 생성자의 사용을 제한해서 객체의 생성과 접근을 매우 세밀하게 제어할 수 있게 해줍니다.
 
-<br>
 
-# Public Constructor (공개 생성자)
+## Public Constructor (공개 생성자)
+---
 
 `public` 생성자는 클래스 외부에서 어디서든 접근할 수 있는 기본적인 생성자입니다.
 
@@ -60,9 +60,9 @@ fun main() {
 ```
 
 
-<br>
 
-# Private Constructor (비공개 생성자)
+## Private Constructor (비공개 생성자)
+---
 
 `private` 생성자는 클래스 외부에서 직접 인스턴스를 생성할 수 없게 막습니다. 이를 통해 인스턴스 생성을 제한하고, 특정 로직을 통해서만 객체를 만들 수 있게 합니다.
 
@@ -112,9 +112,9 @@ fun main() {
 }
 ```
 
-<br>
 
-# Internal Constructor (모듈 내부 생성자)
+## Internal Constructor (모듈 내부 생성자)
+---
 
 `internal` 생성자는 동일한 모듈 내에서만 인스턴스를 생성할 수 있게 합니다. 
 
@@ -156,9 +156,9 @@ fun main() {
 
 이렇게 하면 `ConfigManager` 클래스는 모듈 외부에서는 인스턴스를 생성하거나 사용할 수 없습니다.
 
-<br>
 
-# Protected Constructor (상속 관계에서의 생성자)
+## Protected Constructor (상속 관계에서의 생성자)
+---
 
 `protected` 생성자는 클래스 외부에서는 사용할 수 없지만, 상속받은 클래스에서는 호출할 수 있습니다.
 

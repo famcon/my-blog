@@ -5,7 +5,8 @@ tags:
   - "Kotlin"
 ---
 
-# Comparable
+## Comparable
+---
 
 ```kotlin
 public interface Comparable<in T> {
@@ -39,7 +40,8 @@ fun main() {
 
 <br>
 
-# Comparator
+## Comparator
+---
 
 Comparator는 규칙입니다. 
 
@@ -56,7 +58,8 @@ Comparator를 람다로 넘겨 규칙을 설정할 수 있습니다.
 
 <br>
 
-# Sort
+## Sort
+---
 
 Collection을 정렬하는 함수로 오름차순을 기본으로 정렬합니다.
 
@@ -72,7 +75,8 @@ Collection 자체의 원소 순서를 변경합니다.
 
 <br>
 
-# Sorted
+## Sorted
+---
 
 Sort와 달리 기존 Collection을 Copy해 새로이 정렬된 Collection을 생성합니다.
 
@@ -87,7 +91,8 @@ println(list)    // [1, 2, 7, 6, 5, 6]
 
 <br>
 
-# SortBy
+## SortBy
+---
 
 객체의 특정 프로퍼티를 기준으로 정해 정렬을 할 수 있습니다.
 
@@ -101,7 +106,8 @@ println(list)  // [(1, a), (2, b), (7, c), (5, c), (6, d), (6, e)]
 
 <br>
 
-# SortWith
+## SortWith
+---
 
 Comparator를 파라미터로 받아 정렬을 합니다.
 

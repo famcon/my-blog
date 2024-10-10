@@ -11,9 +11,10 @@ tags:
 
 코틀린은 ArrayDeque를 사용해서 스택과 큐를 구현할 수 있습니다.
 
-<br>
+
 
 ## Stack
+---
 
 스택은 **후입선출(LIFO, Last In First Out)** 방식의 자료구조입니다. `ArrayDeque`를 사용하면 `addLast`로 요소를 추가하고, `removeLast`로 요소를 제거하여 스택 동작을 구현할 수 있습니다.
 
@@ -88,9 +89,10 @@ fun main() {
 }
 ```
 
-<br>
 
-# Queue
+
+## Queue
+---
 
 큐는 **선입선출(FIFO, First In First Out)** 방식의 자료구조입니다. `ArrayDeque`를 사용하여 큐의 기본 동작을 구현할 수 있습니다. 큐에서는 `addLast`로 요소를 추가하고, `removeFirst`로 요소를 제거하여 선입선출을 구현합니다.
 

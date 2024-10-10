@@ -17,7 +17,7 @@ export const setLight = {
 export const setDark = {
   type: SET_DARK,
   data: {
-    theme: "dark",
+    theme: "light",
   },
 }
 
@@ -33,7 +33,7 @@ const reducer = (state = initialState, action) => {
     case SET_DARK: {
       return {
         ...state,
-        theme: "dark",
+        theme: "light",
       }
     }
     default: {

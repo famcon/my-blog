@@ -5,7 +5,8 @@ tags:
   - "Conference"
 ---
 
-### 참여 계기 <a href="#headerid_0" id="headerid_0"></a>
+
+## 참여 계기 <a href="#headerid_0" id="headerid_0"></a>
 
 ![img.png](img/img.png)
 
@@ -20,7 +21,9 @@ tags:
 
 &#x20;
 
-### 세션 종류 <a href="#headerid_1" id="headerid_1"></a>
+<br>
+
+## 세션 종류 <a href="#headerid_1" id="headerid_1"></a>
 
 ![img_1.png](img/img_1.png)
 
@@ -57,9 +60,11 @@ Day2에는 기술 주제별로 강연 세션이 열렸다.
 
 &#x20;
 
-### 강연 내용 정리 <a href="#headerid_2" id="headerid_2"></a>
+<br>
 
-#### 기조연설 <a href="#headerid_3" id="headerid_3"></a>
+## 강연 내용 <a href="#headerid_2" id="headerid_2"></a>
+
+### 기조연설 <a href="#headerid_3" id="headerid_3"></a>
 
 ![img_3.png](img/img_3.png)
 
@@ -80,7 +85,9 @@ aws의 어떤 점이 좋았는지, 실무에서 사용하면서 아찔했던 경
 
 &#x20;
 
-#### 잘나가는 애플리케이션 성능? 알맞은 스토리지로부터! <a href="#headerid_4" id="headerid_4"></a>
+<br>
+
+### 잘나가는 애플리케이션 성능? 알맞은 스토리지로부터! <a href="#headerid_4" id="headerid_4"></a>
 
 * 디스크 성능 최적화를 위한 전략
     * 성장에 따른 적합한 인스턴스를 선택
@@ -105,7 +112,9 @@ aws의 어떤 점이 좋았는지, 실무에서 사용하면서 아찔했던 경
 
 &#x20;
 
-#### 스마트한 클라우드 스토리지 전략 <a href="#headerid_5" id="headerid_5"></a>
+<br>
+
+### 스마트한 클라우드 스토리지 전략 <a href="#headerid_5" id="headerid_5"></a>
 
 **모범사례:**
 
@@ -144,7 +153,9 @@ aws의 어떤 점이 좋았는지, 실무에서 사용하면서 아찔했던 경
 
 &#x20;
 
-#### 12가지 디자인 패턴으로 알아보는 네이티브 마이크로서비스 아키텍처 <a href="#headerid_10" id="headerid_10"></a>
+<br>
+
+### 12가지 디자인 패턴으로 알아보는 네이티브 마이크로서비스 아키텍처 <a href="#headerid_10" id="headerid_10"></a>
 
 ![img_4.png](img/img_4.png)
 
@@ -290,7 +301,9 @@ aws의 어떤 점이 좋았는지, 실무에서 사용하면서 아찔했던 경
 
 &#x20;
 
-#### Datadog을 활용한 AWS 서버리스 Observability <a href="#headerid_25" id="headerid_25"></a>
+<br>
+
+### Datadog을 활용한 AWS 서버리스 Observability <a href="#headerid_25" id="headerid_25"></a>
 
 **Observability 란?**
 
@@ -315,7 +328,9 @@ aws의 어떤 점이 좋았는지, 실무에서 사용하면서 아찔했던 경
 
 &#x20;
 
-### 후기 <a href="#headerid_28" id="headerid_28"></a>
+<br>
+
+## 후기 <a href="#headerid_28" id="headerid_28"></a>
 
 처음 참여했던 오프라인 컨퍼런스였는데 규모가 굉장히 커서 놀랐다.
 
