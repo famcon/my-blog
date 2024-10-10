@@ -40,10 +40,6 @@ const Search = ({ data }) => {
     <Layout>
       <SEO title={title} description={description} url={siteUrl} />
       <SearchWrapper>
-        <Title size="sm">
-          There are {filteredPosts.length} post{filteredPosts.length > 1 && "s"}
-          .
-        </Title>
         <TextField
           onChange={e => setQuery(e.target.value)}
           placeholder="Search"

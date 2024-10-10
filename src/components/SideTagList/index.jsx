@@ -48,9 +48,6 @@ const SideTagList = ({ tags, postCount }) => {
       <Wrapper>
         <Title>TAG LIST</Title>
         <ul>
-          <Tag>
-            <Link to="/tags">all ({postCount})</Link>
-          </Tag>
           {_.map(tags, tag => (
             <Tag>
               <Link to={`/tags?q=${tag.fieldValue}`}>
