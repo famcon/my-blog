@@ -2,7 +2,7 @@ module.exports = {
   title: "Mocha",
   description: "안녕하세요 :) 백엔드 개발자 모카 입니다.",
   author: "Mocha",
-  siteUrl: "https://devhudi.github.io/gatsby-starter-hoodie/",
+  siteUrl: "https://mocha-yoo.netlify.app",
   links: {
     github: "https://github.com/yoo-myeong",
     linkedIn: "https://www.linkedin.com/in/mocha-yoo",
