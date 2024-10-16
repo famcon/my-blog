@@ -124,7 +124,8 @@ class UserEventListener {
 
 ---
 
-마지막으로 이 기능을 테스트 코드로 검증해보겠습니다. Spring Boot의 테스트 환경을 사용하여, 이벤트 발행과 비동기 처리를 검증할 수 있습니다.
+테스트코드는 어디선가 이벤트를 수신해서 처리하면
+수신 이벤트를 트리거해서 하고 싶은데 잘 모르겠어서 일단 delay를 줘서 작성해봤습니다.
 
 ```kotlin
 import org.junit.jupiter.api.Test
