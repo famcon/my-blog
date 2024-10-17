@@ -8,7 +8,7 @@ tags:
 
 
 
-Spring Framework에서는 페이징 처리를 위해 `Pageable` 인터페이스를 제공합니다. 
+Spring Framework에서는 페이징 처리를 위해 `Page`와 `Pageable` 인터페이스를 제공합니다. 
 
 페이징 처리는 데이터를 한 번에 모두 로드하지 않고 청크 단위로 가져올 때 사용합니다.
 
@@ -249,3 +249,5 @@ class CustomTagRepositoryImpl :
     }
 }
 ```
+
+`Page` 인터페이스와 구현체인 `PageImpl`을 사용하여 데이터를 변환해주었습니다.

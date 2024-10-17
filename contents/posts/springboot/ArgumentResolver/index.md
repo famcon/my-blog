@@ -5,7 +5,7 @@ tags:
   - "SpringBoot"
 ---
 
-Spring Boot는 다양한 기능과 함께 개발자가 HTTP 요청에서 데이터를 처리할 수 있는 유연한 도구를 제공합니다. 
+Spring Boot는 개발자가 HTTP 요청에서 데이터를 처리할 수 있는 다양한 도구를 제공합니다. 
 
 그중 **Argument Resolver**는 요청 데이터를 컨트롤러 메서드로 쉽게 주입할 수 있습니다.
 
