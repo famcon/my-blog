@@ -1,5 +1,5 @@
 ---
-title: Argument Resolver
+title: Spring Argument Resolver
 date: "2024-09-28T12:00:00.000Z"
 tags:  
   - "SpringBoot"

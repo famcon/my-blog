@@ -1,5 +1,5 @@
 ---
-title: Spring Framework Page
+title: Spring Page, Pageable 인터페이스
 date: "2024-09-16T12:00:00.000Z"
 tags:  
   - "SpringBoot"
