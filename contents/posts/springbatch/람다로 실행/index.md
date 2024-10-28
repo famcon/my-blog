@@ -131,7 +131,7 @@ class DraftContentJobHandler(
 
 콘솔 테스트 탭에서 람다를 호출하면 다음과 같이 빌드 후 배치잡을 실행합니다.
 
-![img_4.png](img_4.png)
+스프링부트가 셋업되는데 30초 정도가 필요합니다.
 
 <br>
 
