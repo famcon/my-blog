@@ -1,5 +1,5 @@
 ---
-title: Kotlin Spring Batch를 AWS Lambda로 배포하기
+title: Spring Batch를 AWS Lambda로 배포하기
 date: "2024-08-21T12:00:00.000Z"
 tags:  
   - "SpringBatch"
