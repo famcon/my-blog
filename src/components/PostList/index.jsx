@@ -64,7 +64,7 @@ const PostList = ({ postList }) => {
   }, [postCount, postList])
 
   useEffect(() => {
-    setPostCount(10)
+    setPostCount(50)
   }, [postList])
 
   return (
