@@ -1,6 +1,6 @@
 ---
 title: Spring Boot 3.x 애플리케이션을 AWS Beanstalk에서 Docker 플랫폼으로 배포하기
-date: "2024-10-11T12:00:00.000Z"
+date: "2024-10-14T12:00:00.000Z"
 tags:  
   - "AWS"
   - "SpringBoot"
@@ -15,7 +15,7 @@ ECS나 EKS같은 오케스트레이션 서비스는 MSA 같이 분산된 서버�
 EC2 인스턴스에 자동으로 배포하고 관리해 주기 때문에 상대적으로 간단하게 Docker를 이용해서 서버 환경을 보장할 수 있습니다. 
 또한, Beanstalk는 애플리케이션 환경 설정 및 모니터링을 위한 다양한 기능을 제공하기 때문에 빠르게 서버를 구축하기에 매우 적합합니다.
 
-그래서 이번에 Spring Boot를 도커 이미지로 빌드해서 빈스톡으로 배포했던 과정을 간단하게 공유해보겠습니다.
+그래서 이번에 Spring Boot 애플리케이션을 도커 이미지로 빌드해서 Elastic Beanstalk으로 배포했던 과정을 간단하게 공유해보겠습니다.
 
 ## 애플리케이션
 
@@ -23,8 +23,7 @@ EC2 인스턴스에 자동으로 배포하고 관리해 주기 때문에 상대�
 
 ### Rest API
 
-spring boot 프로젝트가 있다는 가정하에
-간단하게 "Hello, World"를 반환하는 API를 만들겠습니다.
+빠르게 "Hello, World"를 반환하는 API를 만들겠습니다.
 
 ```kotlin
 @RestController
@@ -111,7 +110,7 @@ Beanstalk은 JAVA 플랫폼을 이용할 경우, Nginx가 기본적으로 세팅
 반면 도커 플랫폼을 이용하면 Nginx 사용은 선택이며, 원하는 포트를 자유롭게 지정할 수 있다는 장점이 있습니다.
 
 `RUN`은 Dockerfile에 타임존을 서울로 설정하기 위해 tzdata 패키지를 설치하고 삭제합니다.
-이와 같이 동일한 이미지의 컨테이너는 동일한 타임존을 가지고, 동일한 라이브러리르 사용하는 것을 도커를 통해 보장할 수 있습니다.
+이와 같이 동일한 이미지의 컨테이너는 동일한 타임존을 가지고, 동일한 라이브러리 사용을 도커를 통해 보장할 수 있습니다.
 
 `ARG`는 Dockerfile에서 사용할 변수를 정의한 것 입니다.
 
@@ -137,7 +136,7 @@ docker run --rm -p 3000:8080 -e ACTIVE=local-contatiner hello-app
 
 ---
 
-빌드된 이미지를 저장소에 업로드 후 빈스톡 배포 시 주소를 공유해줍니다. 
+빌드된 이미지를 저장소에 업로드 후 빈스톡 배포 시 주소를 공유해줄 것 입니다. 
 이를 통해 인스턴스에서 해당 주소의 이미지를 가져와 컨테이너를 실행시킵니다.
 
 이미지 저장소는 대표적으로 DockerHub와 ECR이 있습니다.
@@ -176,7 +175,7 @@ docker run --rm -p 3000:8080 -e ACTIVE=local-contatiner hello-app
   },
   "Ports": [
     {
-      "ContainerPort": "5000",
+      "ContainerPort": "8080",
       "HostPort": "5000"
     }
   ]
@@ -264,7 +263,7 @@ AWS Beanstalk 콘솔로 이동 후, 환경 생성을 클릭합니다.
 
 수동배포를 하기 위해선 직접 빈스톡에 업로드할 압축 파일을 생성해야 합니다.
 
-현재 압축해야 할 파일은 `Dockerrun.aws.json` 하나 입니다. 만약 `.ebextensions`도 설정하셨다면 해당 폴더를 다른 파일 및 폴더와 함께 압축해주시면 됩니다.
+현재 압축해야 할 파일은 `Dockerrun.aws.json` 하나 입니다. 만약 `.ebextensions`도 설정하셨다면 함께 압축해주시면 됩니다.
 
 ![img_3.png](img_3.png)
 
@@ -276,7 +275,7 @@ AWS Beanstalk 콘솔로 이동 후, 환경 생성을 클릭합니다.
 
 ### 자동배포
 
-자동배포는 github actions를 이용합니다.
+자동배포는 Github Actions를 이용합니다.
 
 그 전에 먼저 압축파일을 업로드 할 s3 버킷을 생성해줍니다.
 
@@ -285,8 +284,8 @@ AWS Beanstalk 콘솔로 이동 후, 환경 생성을 클릭합니다.
 s3콘솔에서 이렇게 모든 퍼블릭 엑세스를 차단한 배포용 버킷을 하나 생성합니다.
 
 
-github actions는 프로젝트의 루트 경로에 .github/workflows에 존재하는 yml 파일에 의해 동작합니다.
-.github/workflow에 deploy.yml 파일을 만들고 다음과 같이 작성해줍니다.
+Github Actions는 프로젝트의 루트 경로에 `.github/workflows`에 존재하는 yml 파일에 의해 동작합니다.
+`.github/workflow`에 `deploy.yml` 파일을 만들고 다음과 같이 작성해줍니다.
 
 ```yaml
 name: Deploy API Live
@@ -367,11 +366,28 @@ jobs:
         shell: bash
 ```
 
-`secrets`는 github secrets에 설정된 값을 읽어오는 것 입니다.
+`secrets`는 `Github Secrets`에 설정된 값을 읽어오는 것 입니다.
 설정 방법은 [github 공식문서](https://docs.github.com/ko/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions)를 참고하면 됩니다. 
 
 일반적으로 빈스톡에 배포한다고 하면 자동으로 s3 버킷을 생성하고 업로드하는 플러그인을 많이 사용하는데요.
 
-저는 master에 push되었다고 해서 배포가 바로 진행되는 것을 선호하지 않아서, 배포 버튼을 개발자가 직접 클릭했을 때만 배포가 진행될 수 있게 버전 업로드 까지만 하는 편입니다.
+저는 `master`에 `push`되었다고 해서 배포가 바로 진행되는 것을 선호하지 않아서, 배포 버튼을 개발자가 직접 클릭했을 때만 배포가 진행될 수 있게 버전 업로드 까지만 하는 편입니다.
 
-여기까지 완료함으로써 빈스톡에서 애플리케이션 도커 컨테이너 배포가 마무리 되었고 빈스톡 도메인으로 접속하면 처음 로컬 rest api를 테스트 했을 때와 같은 화면을 확인할 수 있습니다.
+yml 작성까지 완료됐다면, Github으로 `push` 해줍니다.
+
+![img_15.png](img_15.png)
+
+Github Wokrflows의 작업이 정상적으로 완료되면 Beanstalk 콘솔에서 우측 상단 `업로드 및 배포`를 클릭하고 정보 박스 내 `애플리케이션 버전 페이지`를 클릭해서 이동합니다.
+
+이동된 페이지에서는 새로 업로드 된 버전을 확인할 수 있습니다.
+
+![img_17.png](img_17.png)
+
+신규 버전을 선택하고 다시 우측 상단의 작업을 클릭 후 배포를 클릭합니다.
+그리고 환경 선택 후 배포를 진행합니다.
+
+---
+
+<br>
+
+여기까지 완료함으로써 빈스톡에서 애플리케이션 도커 컨테이너 배포가 마무리 되었고 빈스톡 도메인으로 접속하면 처음 로컬 Rest API를 테스트 했을 때와 같은 화면을 확인할 수 있습니다.
