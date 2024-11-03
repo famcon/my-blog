@@ -18,19 +18,22 @@ Comparable을 상속한 객체는 compare 함수를 오버라이딩해서 동일
 comparteTo와 같은 함수를 이용합니다.
 
 ```kotlin
-class HeadPhone(var price: Int, var name: String) : Comparable<Person> {
+class HeadPhone(
+    var price: Int,
+    var name: String,
+) : Comparable<HeadPhone> {
     override fun compareTo(other: HeadPhone): Int =
         when {
             this.price > other.price -> 1
             this.price < other.price -> -1
-            else                 -> 0
+            else -> 0
         }
 }
 
 fun main() {
     val airpod = HeadPhone(150000, "에어팟")
     val airpodPro = HeadPhone(200000, "에어팟 프로")
-    
+
     println(airpodPro > airpod) // true
     println(airpodPro.compareTo(airpod)) // 1
 }
@@ -47,10 +50,12 @@ Comparator는 규칙입니다.
 정률 순서를 지정하고 싶을 때 이용합니다.
 
 ```kotlin
-listOf<HeadPhone>(headPhone1,headPhone2,headPhone3)
-.sortedWith(Comparator<HeadPhone> { headPhone1, headPhone2 ->
-    headPhone1.age.compareTo(headPhone2.age)})
-.forEach { println("${it.price} ${it.name}") }
+listOf<HeadPhone>(...)
+        .sortedWith(
+            Comparator<HeadPhone> { headPhone1, headPhone2 ->
+                headPhone1.price.compareTo(headPhone2.price)
+            },
+        ).forEach { println("${it.price} ${it.name}") }
 ```
 
 Comparator를 람다로 넘겨 규칙을 설정할 수 있습니다.
@@ -71,6 +76,11 @@ Collection 자체의 원소 순서를 변경합니다.
 
 내림차순은 `sortDescending`을 이용합니다.
 
+```kotlin
+list.sortDescending()
+println(list) // [7, 6, 6, 5, 2, 1]
+```
+
 
 ## Sorted
 ---
@@ -85,6 +95,12 @@ println(list)    // [1, 2, 7, 6, 5, 6]
 ```
 
 내림차순은 `sortedByDescending`를 이용합니다.
+
+```kotlin
+val sortedDesc = list.sortedDescending()
+println(sortedDesc) // [7, 6, 6, 5, 2, 1]
+println(list) // [1, 2, 7, 6, 5, 6]
+```
 
 
 ## SortBy
