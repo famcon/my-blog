@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://mocha-yoo.netlify.app///sitemap.xml
-Host: https://mocha-yoo.netlify.app/
+Sitemap: https://ironyoo.netlify.app///sitemap.xml
+Host: https://ironyoo.netlify.app/

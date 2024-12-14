@@ -1,12 +1,10 @@
 module.exports = {
-  title: "Mocha",
-  description: "안녕하세요 :) 백엔드 개발자 모카 입니다.",
-  author: "Mocha",
-  siteUrl: "https://mocha-yoo.netlify.app",
+  title: "IronYoo",
+  description: "안녕하세요 :) CS, AWS, Back End 등 다양한 기술을 기록합니다.",
+  author: "IronYoo",
+  siteUrl: "https://ironyoo.netlify.app",
   links: {
-    github: "https://github.com/yoo-myeong",
-    linkedIn: "https://www.linkedin.com/in/mocha-yoo",
-    email: "mailto:devhudi@gmail.com",
+    github: "https://github.com/ironyoo",
   },
   useAbout: true,
   // See https://giscus.app/

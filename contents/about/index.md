@@ -1,5 +1,5 @@
 ---
-title: "Mocha Yoo 기술블로그 입니다."
+title: "IronYoo 기술블로그 입니다."
 ---
 
 만나서 반갑습니다.

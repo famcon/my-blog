@@ -1,5 +1,5 @@
 export const initialState = {
-  theme: "light",
+  theme: "dark",
 }
 
 // action type 정의
@@ -10,14 +10,14 @@ export const SET_DARK = "setDark"
 export const setLight = {
   type: SET_LIGHT,
   data: {
-    theme: "light",
+    theme: "dark",
   },
 }
 
 export const setDark = {
   type: SET_DARK,
   data: {
-    theme: "light",
+    theme: "dark",
   },
 }
 
@@ -27,13 +27,13 @@ const reducer = (state = initialState, action) => {
     case SET_LIGHT: {
       return {
         ...state,
-        theme: "light",
+        theme: "dark",
       }
     }
     case SET_DARK: {
       return {
         ...state,
-        theme: "light",
+        theme: "dark",
       }
     }
     default: {
